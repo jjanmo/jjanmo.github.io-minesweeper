@@ -5,9 +5,6 @@ const selectedRank = document.querySelector('.rank-selected');
 
 function handleExitModal() {
     rankModal.classList.add('hidden');
-    //초기화 : 
-    rankModalDifficulty.forEach(ele => ele.classList.remove('rank-selected'));
-    rankModalDifficulty[0].click();
 }
 
 function getUsers(difficulty) {
@@ -79,7 +76,6 @@ function handleShowTable(e) {
 function init() {
     rankModalExitButton.addEventListener('click', handleExitModal);
     rankModalDifficulty.forEach(ele => ele.addEventListener('click', handleShowTable));
-    selectedRank.click();
 }
 
 

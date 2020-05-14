@@ -139,7 +139,7 @@ function paintBlocks() {
             totalMine = 100;
             break;
         default: //custom
-            console.log(customLength);
+            // console.log(customLength);
             fragment = makeBlocks(customLength);
             break;
     }
@@ -156,7 +156,7 @@ function paintBlocks() {
 
     blocks = document.querySelectorAll('.block');
     makeClickEvent(blocks);
-    console.log(blocks, blockObjs);
+    // console.log(blocks, blockObjs);
 }
 
 function makeBlocks(length) {
@@ -533,6 +533,7 @@ function checkGameEnd() {
 }
 
 function handleShowRankModal() {
+    selectedRank.click(); //클릭할 때 갱신
     rankModal.classList.remove('hidden');
 }
 
@@ -558,7 +559,7 @@ function handleCustomGame(e) {
 
     }
     else {
-        console.log(length, mineCount);
+        // console.log(length, mineCount);
         customLength = length;
         totalMine = mineCount;
         paintBlocks();

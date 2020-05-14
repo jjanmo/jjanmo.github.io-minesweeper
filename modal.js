@@ -15,7 +15,6 @@ function handleExitModal() {
 function handleSubmit(e) {
     const record = document.getElementById('js-record').textContent;
     const name = inputName.value;
-    console.log(name);
     if (name) {
         sendToDB(record, name, difficulty);
         document.getElementById('js-input-name').value = '';
@@ -32,21 +31,26 @@ function handleSubmit(e) {
     }
 }
 
+function getDate() {
+    const now = new Date();
+    return `${now.getFullYear()}-${now.getMonth() + 1 < 10 ? `0${now.getMonth() + 1}` : `${now.getMonth() + 1}`}-${now.getDate() < 10 ? `0${now.getDate()}` : `${now.getDate()}`}`;
+}
+
 function sendToDB(record, name, difficulty) {
-    console.log(record, name, difficulty)
+    console.log(getDate());
     //local storage 이용
     const userObj = {
         id: Date.now().toString(),
         name,
         record,
         difficulty,
-        date: new Date()
+        date: getDate()
     }
-    console.log(records);
+
     records.push(userObj);
-    console.log(records);
     localStorage.setItem('records', JSON.stringify(records));
 }
+
 
 function init() {
     records = JSON.parse(localStorage.getItem('records')) || [];
