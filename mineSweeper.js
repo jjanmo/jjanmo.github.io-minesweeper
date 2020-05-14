@@ -148,6 +148,7 @@ function paintBlocks() {
         board.style.gridTemplateColumns = `repeat(${customLength},28px)`;
     }
     else {
+        board.style.gridTemplateColumns = '';
         board.className = `board ${difficulty}`;
     }
     board.innerHTML = '';
