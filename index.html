@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Balsamiq+Sans|DM+Mono&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="mineSweeper.css" />
+        <link rel="stylesheet" href="modal.css" />
+        <link rel="stylesheet" href="rankModal.css" />
+        <title>Mine Sweeper</title>
+    </head>
+    <body>
+        <div class="modal hidden" id="js-modal">
+            <div class="modal-overlay" id="js-modal-overlay"></div>
+            <div class="modal-content">
+                <div class="exit-button" id="js-exit-button"></div>
+                <div class="finish"></div>
+                <div class="record-box">
+                    <span class="title">your record is ...</span>
+                    <span class="value" id="js-record"></span>
+                    <span class="seconds">seconds 🎯</span>
+                </div>
+                <div class="input-box">
+                    <label class="name" for="js-input-name">name</label>
+                    <input
+                        type="text"
+                        class="input-name"
+                        id="js-input-name"
+                        placeholder="Enter your name..."
+                    />
+                    <button class="submit" id="js-submit-button">SEND</button>
+                </div>
+                <div class="message" id="js-message">
+                    Send name and record your results
+                </div>
+            </div>
+        </div>
+        <div class="rank-button" id="js-rank-button">rank</div>
+        <div class="rank-modal hidden" id="js-rank-modal">
+            <div class="rank-modal-content">
+                <div class="rank-modal-exit-button" id="js-rank-modal-exit-button"></div>
+                <div class="select-difficulty">
+                    <span class="rank-modal-difficulty rank-selected">basic</span>
+                    <span class="rank-modal-difficulty">intermediate</span>
+                    <span class="rank-modal-difficulty">advanced</span>
+                </div>
+                <table border="1" id="js-rank-table"></table>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="header">
+                <div class="select-difficulty">
+                    <span class="difficulty selected">basic</span>
+                    <span class="difficulty">intermediate</span>
+                    <span class="difficulty">advanced</span>
+                    <span class="difficulty">custom</span>
+                </div>
+                <div class="custom-config">
+                    <form action="#">
+                        <label for="js-width">LENGTH</label>
+                        <input
+                            type="number"
+                            class="custom-number"
+                            id="js-length"
+                            value="1"
+                            min="1"
+                            max="50"
+                        />
+                        <label for="js-mine-count">MINE</label>
+                        <input
+                            type="number"
+                            class="custom-number"
+                            id="js-mine-count"
+                            value="1"
+                            min="1"
+                            max="500"
+                        />
+                        <button class="update-button" id="js-update-button">
+                            UPDATE
+                        </button>
+                    </form>
+                    <div class="warning hidden"></div>
+                </div>
+                <div class="control-block">
+                    <div class="mine-count panel" id="js-count-panel">
+                        <div class="number"></div>
+                        <div class="number"></div>
+                        <div class="number"></div>
+                    </div>
+                    <div class="display">
+                        <div class="button start" id="js-start-button"></div>
+                    </div>
+                    <div class="timer panel" id="js-timer-panel">
+                        <div class="number zero"></div>
+                        <div class="number zero"></div>
+                        <div class="number zero"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="board basic" id="js-board"></div>
+        </div>
+        <script src="mineSweeper.js"></script>
+        <script src="modal.js"></script>
+        <script src="rankModal.js"></script>
+    </body>
+</html>
