@@ -132,7 +132,7 @@ function paintBlocks() {
             break;
         case 'intermediate': // 15 * 15 지뢰 40개
             fragment = makeBlocks(15);
-            totalMine = 45;
+            totalMine = 40;
             break;
         case 'advanced': //24 * 24 지뢰 100개
             fragment = makeBlocks(24);
