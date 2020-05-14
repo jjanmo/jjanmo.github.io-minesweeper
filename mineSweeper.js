@@ -190,10 +190,10 @@ function renderMineCountPanel(totalMine) {
             numbers[1].classList.add('one');
             numbers[2].classList.add('zero');
             break;
-        case 45:
+        case 40:
             numbers[0].classList.add('zero');
             numbers[1].classList.add('four');
-            numbers[2].classList.add('five');
+            numbers[2].classList.add('zero');
             break;
         case 100:
             numbers[0].classList.add('one');
