@@ -37,7 +37,7 @@ function getDate() {
 }
 
 function sendToDB(record, name, difficulty) {
-    console.log(getDate());
+    // console.log(getDate());
     //local storage 이용
     const userObj = {
         id: Date.now().toString(),

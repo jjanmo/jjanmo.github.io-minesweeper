@@ -175,7 +175,7 @@ function makeBlocks(length) {
         // div.dataset.index = i;          //screen - element interaction 
         fragment.append(div);
     }
-    console.log(blockObjs);
+    // console.log(blockObjs);
     return fragment;
 }
 
